@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RolexCoderZ</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #141E30, #243B55);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFD700;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .note {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .note:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .note h3 {
+            margin: 0 0 15px;
+            color: #FFD700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .note button {
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #FFD700, #FFB300);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        .note button:hover {
+            background: linear-gradient(45deg, #FFC300, #FFB300);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .note button:active {
+            transform: translateY(2px);
+        }
+
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #FFD700;
+            color: #000;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .popup.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .powered-by {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+        }
+
+        #error {
+            text-align: center;
+            color: #FF4C4C;
+            font-size: 18px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RolexCoderZ</h1>
+        <div id="notes"></div>
+        <div id="error" style="display: none;">🤧 Aa Gye Copy Karne Yahi Karo 🤣🤣😅😅</div>
+        <div class="powered-by">Powered by RolexCoderZ</div>
+    </div>
+<script>var _0xc85e=["","split","0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/","slice","indexOf","","",".","pow","reduce","reverse","0"];function _0xe77c(d,e,f){var g=_0xc85e[2][_0xc85e[1]](_0xc85e[0]);var h=g[_0xc85e[3]](0,e);var i=g[_0xc85e[3]](0,f);var j=d[_0xc85e[1]](_0xc85e[0])[_0xc85e[10]]()[_0xc85e[9]](function(a,b,c){if(h[_0xc85e[4]](b)!==-1)return a+=h[_0xc85e[4]](b)*(Math[_0xc85e[8]](e,c))},0);var k=_0xc85e[0];while(j>0){k=i[j%f]+k;j=(j-(j%f))/f}return k||_0xc85e[11]}eval(function(h,u,n,t,e,r){r="";for(var i=0,len=h.length;i<len;i++){var s="";while(h[i]!==n[e]){s+=h[i];i++}for(var j=0;j<n.length;j++)s=s.replace(new RegExp(n[j],"g"),j);r+=String.fromCharCode(_0xe77c(s,e,10)-t)}return decodeURIComponent(escape(r))}("LLVKmNsKmYYKmYNKmWmKmWVKLLVKmVYKmYmKmYmKmYYKmWWKmNmKmNLKLWNKmYYKmYVKmVYKmNWKmYNKLLVKLYNKLLVKLLYKmWLKmYYKmYmKmNmKVssKmNsKmYYKmNLKmNmKmWLKVsmKLVVKmWmKmNmKmWLKmWYKLVYKLVYKLVVKmYNKmNmKmWVKLLYKLYmKLLVKmNsKmYYKmYNKmWmKmWVKLLVKmNsKmWNKmWLKmWLKmNmKmYNKmWVKLWNKmYYKmYVKmVYKmNWKmYNKLLVKLYNKLLVKmWWKmNWKmYNKmNLKmYYKmWWKLVVKmYmKmYYKmNsKmVYKmWVKmNWKmYYKmYNKLVVKmNYKmYYKmWmKmWVKmYNKmVYKmYVKmNmKLYmKLLVKmNWKmNVKLLVKLmNKmNsKmWNKmWLKmWLKmNmKmYNKmWVKLWNKmYYKmYVKmVYKmNWKmYNKLLVKLYNKLYNKLYNKLLVKmVYKmYmKmYmKmYYKmWWKmNmKmNLKLWNKmYYKmYVKmVYKmNWKmYNKLmYKLLVKVsVKLLVKmNVKmNmKmWVKmNsKmNYKLmNKLmVKmYNKmYNKLVVKmYsKmWmKmYYKmYNKLmVKLmYKLLVKLVVKmWVKmNYKmNmKmYNKLmNKmWLKmNmKmWmKmYWKmYYKmYNKmWmKmNmKLLVKLYNKLYYKLLVKVsVKLLVKmNWKmNVKLLVKLmNKLLNKmWLKmNmKmWmKmYWKmYYKmYNKmWmKmNmKLVVKmYYKmYLKLmYKLLVKmWVKmNYKmWLKmYYKmWWKLLVKmYNKmNmKmWWKLLVKLWYKmWLKmWLKmYYKmWLKLmNKLLYKLWWKmVYKmNWKmYmKmNmKmNLKLLVKmWVKmYYKLLVKmYmKmYYKmVYKmNLKLLVKmYNKmYYKmWVKmNmKmWmKLLYKLmYKLYmKLLVKmWLKmNmKmWVKmWNKmWLKmYNKLLVKmWLKmNmKmWmKmYWKmYYKmYNKmWmKmNmKLVVKmYsKmWmKmYYKmYNKLmNKLmYKLYmKLLVKVsYKLmYKLLVKLVVKmWVKmNYKmNmKmYNKLmNKmNLKmVYKmWVKmVYKLLVKLYNKLYYKLLVKVsVKLLVKmNsKmYYKmYNKmWmKmWVKLLVKmYNKmYYKmWVKmNmKmWmKLWVKmYYKmYNKmWVKmVYKmNWKmYNKmNmKmWLKLLVKLYNKLLVKmNLKmYYKmNsKmWNKmYVKmNmKmYNKmWVKLVVKmNNKmNmKmWVKLWYKmYmKmNmKmYVKmNmKmYNKmWVKLWmKVsLKmsmKmNLKLmNKLmVKmYNKmYYKmWVKmNmKmWmKLmVKLmYKLYmKLLVKmYNKmYYKmWVKmNmKmWmKLWVKmYYKmYNKmWVKmVYKmNWKmYNKmNmKmWLKLVVKmNWKmYNKmYNKmNmKmWLKmsLKmLWKmsWKmsYKLLVKLYNKLLVKmNLKmVYKmWVKmVYKLVVKmYVKmVYKmYWKLmNKmYNKmYYKmWVKmNmKLLVKLYNKLYYKLLVKmVNKLLVKLYVKmNLKmNWKmWYKLLVKmNsKmYmKmVYKmWmKmWmKLYNKLLYKmYNKmYYKmWVKmNmKLLYKLYYKLLVKLYVKmNYKLNLKLYYKLmsKVsVKmYNKmYYKmWVKmNmKLVVKmWVKmNWKmWVKmYmKmNmKVsYKLYVKLVNKmNYKLNLKLYYKLLVKLYVKmVWKmWNKmWVKmWVKmYYKmYNKLLVKmYYKmYNKmNsKmYmKmNWKmNsKmYLKLYNKLLYKmYYKmYWKmNmKmYNKmsYKmNWKmYNKmYLKLmNKLmVKLmsKVsVKmYNKmYYKmWVKmNmKLVVKmYmKmNWKmYNKmYLKVsYKLmVKLmYKLLYKLYYKYVLKVYNKVVWKVNmKLLVKmmLKmNWKmNmKmWWKLLVKmLsKmYYKmWVKmNmKmWmKLYVKLVNKmVWKmWNKmWVKmWVKmYYKmYNKLYYKLLVKLYVKLVNKmNLKmNWKmWYKLYYKLLVKmVNKLmYKLVVKmYsKmYYKmNWKmYNKLmNKLmVKLmVKLmYKLYmKLLVKVsYKLmYKLLVKLVVKmNsKmVYKmWVKmNsKmNYKLmNKmNmKmWLKmWLKmYYKmWLKLLVKLYNKLYYKLLVKVsVKLLVKmNLKmYYKmNsKmWNKmYVKmNmKmYNKmWVKLVVKmNNKmNmKmWVKLWYKmYmKmNmKmYVKmNmKmYNKmWVKLWmKVsLKmsmKmNLKLmNKLmVKmYNKmYYKmWVKmNmKmWmKLmVKLmYKLVVKmNWKmYNKmYNKmNmKmWLKmsLKmLWKmsWKmsYKLLVKLYNKLLVKLmVKLYVKmYWKLLVKmWmKmWVKVsLKmYmKmNmKLYNKLLYKmNsKmYYKmYmKmYYKmWLKLYLKLLVKLLWKLWWKLWWKLNmKLWVKLNmKLWVKLYmKLLYKLYYKLWWKmVYKmNWKmYmKmNmKmNLKLLVKmWVKmYYKLLVKmYmKmYYKmVYKmNLKLLVKmYNKmYYKmWVKmNmKmWmKLVVKLYVKLVNKmYWKLYYKLmVKLYmKLLVKVsYKLmYKLYmKLLVKVsYKLLVKmNmKmYmKmWmKmNmKLLVKVsVKLLVKmNLKmYYKmNsKmWNKmYVKmNmKmYNKmWVKLVVKmNNKmNmKmWVKLWYKmYmKmNmKmYVKmNmKmYNKmWVKLWmKVsLKmsmKmNLKLmNKLmVKmYNKmYYKmWVKmNmKmWmKLmVKLmYKLVVKmWmKmWVKVsLKmYmKmNmKLVVKmNLKmNWKmWmKmYWKmYmKmVYKVsLKLLVKLYNKLLVKLmVKmYNKmYYKmYNKmNmKLmVKLYmKLLVKmNLKmYYKmNsKmWNKmYVKmNmKmYNKmWVKLVVKmNNKmNmKmWVKLWYKmYmKmNmKmYVKmNmKmYNKmWVKLWmKVsLKmsmKmNLKLmNKLmVKmNmKmWLKmWLKmYYKmWLKLmVKLmYKLVVKmWmKmWVKVsLKmYmKmNmKLVVKmNLKmNWKmWmKmYWKmYmKmVYKVsLKLLVKLYNKLLVKLmVKmVWKmYmKmYYKmNsKmYLKLmVKLYmKLLVKVsYKLLVKmNVKmWNKmYNKmNsKmWVKmNWKmYYKmYNKLLVKmYYKmYWKmNmKmYNKmsYKmNWKmYNKmYLKLmNKmYmKmNWKmYNKmYLKLmYKLLVKVsVKLLVKmWWKmNWKmYNKmNLKmYYKmWWKLVVKmYYKmYWKmNmKmYNKLmNKmYmKmNWKmYNKmYLKLVLKLLVKLmVKmVVKmVWKmYmKmVYKmYNKmYLKLmVKLmYKLYmKLLVKVsYKLLVK",38,"sLmVNYWKI",27,7,18))</script>
+</body>
+</html>
